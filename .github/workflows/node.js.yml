@@ -31,15 +31,15 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x, 12.x]
-        os: [ubuntu-latest, windows-2016]
+        os: [ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v2
     - uses: actions/download-artifact@master
       with: 
-        name: webpack artifacts
-        path: public
-    - name: Use Node.js ${{ matrix.node-version }}
+       name: webpack artifacts
+       path: public
+    - name: Use Nodejs ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
